@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      คำนวน BMI
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!--<ion-list >-->
+
+  <ion-item>
+    <ion-label floating>น้ำหนัก(kg)</ion-label>
+    <ion-input type="text" [(ngModel)]="weight"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>ส่วนสูง(cm)</ion-label>
+    <ion-input type="text" [(ngModel)]="height"></ion-input>
+  </ion-item>
+
+  <!--</ion-list>-->
+  <div padding>
+    <button ion-button color="primary" (click)="calBmi()" block>คำนวณ</button>
+  </div>
+
+
+
+  <ion-card>
+    <ion-card-header>
+      น้ำหนัก : {{weight}}<br> ส่วนสูง : {{height}}
+    </ion-card-header>
+    <ion-card-content>
+      BMI : {{bmi | number:'1.2-2'}}
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
