@@ -24,14 +24,21 @@
     <button ion-button color="primary" (click)="calBmi()" block>คำนวณ</button>
   </div>
 
-
-
   <ion-card>
     <ion-card-header>
-      น้ำหนัก : {{weight}}<br> ส่วนสูง : {{height}}
+      <!--น้ำหนัก : {{weight}} ส่วนสูง : {{height}}-->
+      <ion-badge color="secondary"></ion-badge>
+      <ion-chip>
+        
+        <ion-icon name="body" color="secondary"></ion-icon>
+        <ion-label> BMI : {{bmi | number:'1.2-2'}}</ion-label>
+      </ion-chip>
     </ion-card-header>
     <ion-card-content>
-      BMI : {{bmi | number:'1.2-2'}}
+      <p>ดัชนีมวลกายน้อยกว่า 18.5 ให้ถือว่าน้ำหนักน้อยกว่าปกติ</p>
+      <p>ดัชนีมวลกายระหว่าง 18.5 และ 24.9 เป็นน้ำหนักปกติ</p>
+      <p>ดัชนีมวลกายระหว่าง 25 และ 29.9 เป็นน้ำหนักเกิน</p>
+      <p>ดัชนีมวลกายมากกว่า 30 เป็นน้ำหนักอ้วน</p>
     </ion-card-content>
   </ion-card>
 
